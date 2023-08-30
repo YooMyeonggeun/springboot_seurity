@@ -4,6 +4,7 @@ import com.example.security1.entity.User;
 import com.example.security1.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -73,7 +74,8 @@ public class IndexController {
         return "개인정보";
     }
 
-    @PreAuthorize("hasRole('ROLE_MANAGER')")
+    @PreAuthorize("hasAnyAuthority('manager', 'admin')")
+//    @PostAuthorize("hasAnyAuthority('manager', 'admin')")
     @GetMapping("/data")
     @ResponseBody
     public String data(){
