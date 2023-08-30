@@ -26,3 +26,21 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
     format_sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+#          kakao:
+#            client-id: 발급받은 client-id key
+#            client-secret: 발급받은 client-secret key
+          google:
+            client-id: 338703056971-n02tt0hd5dcegs2q94lm4m0u2p1g505g.apps.googleusercontent.com
+            client-secret: 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
+#          naver:
+#            client-id: 발급받은 client-id key
+#            client-secret: 발급받은 client-secret key
+#          facebook:
+#            client-id: 발급받은 client-id key
+#            client-secret: 발급받은 client-secret key
+

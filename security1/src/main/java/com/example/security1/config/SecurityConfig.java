@@ -31,7 +31,10 @@ public class SecurityConfig {
                 .anyRequest().permitAll()
                 .and().formLogin().loginPage("/loginForm")
                 .loginProcessingUrl("/login") //login 주소가 호출이 되면 시큐리티가 낚아채서 대시 로그인을 진행해준다 controller에 /login을 만들지 않아도 됨
-                .defaultSuccessUrl("/");
+                .defaultSuccessUrl("/")
+                .and()
+                .oauth2Login()
+                .loginPage("/loginForm");
 
         // 401 Error 처리, Authorization 즉, 인증과정에서 실패할 시 처리
 //        http.exceptionHandling().authenticationEntryPoint(customAuthenticationEntryPoint);
