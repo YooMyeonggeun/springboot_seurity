@@ -1,4 +1,4 @@
-package com.example.security1.auth;
+package com.example.security1.config.auth;
 
 import com.example.security1.entity.User;
 import com.example.security1.repository.UserRepository;
